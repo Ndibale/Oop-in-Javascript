@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Oriented programming</title>
+</head>
+<body>
+    <h2 id="title">Dogs particulars</h2>
+    <ul id="dogList">
+        <!-- Placeholder for the list items -->
+    </ul>
+
+    <h2>Programmers</h2>
+    <ul id="programmersList">
+        <!-- Placeholder for the programmers list -->
+    </ul>
+    
+    <h2>Calculation of area in square root</h2>
+    <ul id="areasList">
+        <!-- Placeholder for the programmers list -->
+    </ul>
+    
+    <h2>Here is a concept of inheritance</h2>
+    
+    <script src="./index.js"></script>
+    <script src="./listBinding.js"></script>
+    <script src="./area.js"></script>
+    <script type="text/javascript">
+        const dogList = document.getElementById("dogList");
+        const listBinding = new ListBinding(dogList);
+    
+        const areaList = document.getElementById("areasList");
+        
+        const programmersList = document.getElementById("programmersList");
+    
+        // Fetch and display the programmers
+        const programmers = [
+            new Programmer('Demetrius Ndibalema', 32, 4),
+            new Programmer('Jackson', 24, 12)
+        ];
+    
+        for (const programmer of programmers) {
+            const programmerItem = document.createElement('li');
+            programmerItem.textContent = `${programmer.name} has ${programmer.age} years of age , has a programming experience of ${programmer.yearsOfExperience} years `;
+            programmersList.appendChild(programmerItem);
+        }
+    
+        // Fetch and display the list items
+        const dogs = [
+            new Dog('Simba', 5),
+            new Dog('Chui', 2)
+        ];
+    
+        for (const dog of dogs) {
+            const dogItem = document.createElement('li');
+            dogItem.textContent = `${dog.name} has ${dog.age} years old`;
+            dogList.appendChild(dogItem);
+        }
+    
+        // Fetch and display the area list items
+        const areas = [
+            new Square(5),
+            new Square(10)
+        ];
+    
+        for (const area of areas) {
+            const areaItem = document.createElement('li');
+            areaItem.textContent = `Width of ${area.width} with height of ${area.height} has area of ${area.Area}`;
+            areaList.appendChild(areaItem);
+        }
+    </script>
+    
+</body>
+</html>
